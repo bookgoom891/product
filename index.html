@@ -61,6 +61,7 @@
         <p class="privacy">사진은 저장되지 않습니다.</p>
 
         <button class="cta" id="analyzeBtn" disabled>동물상 확인하기</button>
+        <p class="status" id="statusText" aria-live="polite"></p>
         <div class="loader" id="loader" aria-live="polite">
           <span></span><span></span><span></span>
           <p>분석 중...</p>
@@ -92,6 +93,8 @@
     </nav>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
   <script src="/main.js" defer></script>
 </body>
 </html>
