@@ -1,14 +1,97 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
-  <link href='/style.css' rel='stylesheet'>
+  <title>동물상 테스트</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
-  <script defer type="text/javascript" src="/main.js"></script>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-grid"></div>
+
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand-mark">AF</span>
+      <span class="brand-text">동물상 테스트</span>
+    </div>
+    <div class="tagline">얼굴로 보는 이미지 동물상 테스트</div>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">무료 · 빠른 분석 · 개인정보 미저장</p>
+        <h1>사진 한 장으로
+          <span class="accent">당신의 동물상</span>을
+          알아보세요
+        </h1>
+        <p class="lead">
+          이미지 업로드만으로 결과를 확인하는 간단한 테스트입니다.
+          실제 인공지능 분석은 추후 연결됩니다.
+        </p>
+        <div class="gender-toggle" role="radiogroup" aria-label="성별 선택">
+          <button class="toggle-btn is-active" data-gender="female" role="radio" aria-checked="true">여자</button>
+          <button class="toggle-btn" data-gender="male" role="radio" aria-checked="false">남자</button>
+        </div>
+      </div>
+
+      <div class="upload-card">
+        <div class="upload-head">
+          <h2>얼굴 사진을 선택하세요</h2>
+          <p>드래그 & 드롭 또는 클릭해서 업로드</p>
+        </div>
+
+        <label class="dropzone" for="imageInput">
+          <input id="imageInput" type="file" accept="image/*" />
+          <div class="dropzone-inner" id="dropzone">
+            <div class="dropzone-icon">⬆</div>
+            <div class="dropzone-text">
+              <strong>사진 업로드</strong>
+              <span>지원: JPG, PNG, HEIC</span>
+            </div>
+          </div>
+          <img class="preview" id="preview" alt="업로드한 얼굴 사진 미리보기" />
+        </label>
+
+        <p class="privacy">사진은 저장되지 않습니다.</p>
+
+        <button class="cta" id="analyzeBtn" disabled>동물상 확인하기</button>
+        <div class="loader" id="loader" aria-live="polite">
+          <span></span><span></span><span></span>
+          <p>분석 중...</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="result" id="result" hidden>
+      <div class="result-card">
+        <div class="result-header">
+          <span class="badge" id="resultGender">여자 결과</span>
+          <h2 id="resultTitle">강아지상</h2>
+        </div>
+        <p id="resultDesc">밝고 친근한 인상이 돋보이는 타입입니다.</p>
+        <div class="result-actions">
+          <button class="ghost" id="retryBtn">다시 테스트하기</button>
+        </div>
+        <p class="disclaimer">현재는 데모 결과를 제공합니다. 실제 분석 모델은 추후 연결됩니다.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>© 2026 Animal Face Lab. All rights reserved.</div>
+    <nav>
+      <a href="#">동물상이란?</a>
+      <a href="#">개인정보 처리방침</a>
+      <a href="#">이용약관</a>
+    </nav>
+  </footer>
+
+  <script src="/main.js" defer></script>
 </body>
 </html>
