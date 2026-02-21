@@ -4,7 +4,7 @@ const state = {
   modelReady: false,
 };
 
-const MODEL_URL = "https://teachablemachine.withgoogle.com/models/[...]/";
+const MODEL_URL = "https://teachablemachine.withgoogle.com/models/f15G61xti/";
 
 const animalDescriptions = {
   "강아지상": "밝고 친근한 인상이 돋보이며, 주변을 편안하게 만드는 타입입니다.",
